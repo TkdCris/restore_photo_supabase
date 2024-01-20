@@ -60,14 +60,15 @@ export function CreateAccountForm() {
       } = await supabase.auth.signUp({
         email,
         password,
-        options: {
-          emailRedirectTo: `${location.origin}/auth/callback`,
-        },
       });
+      // options: {
+      //   emailRedirectTo: `${location.origin}/auth/callback`,
+      // },
 
       if (user) {
         form.reset();
-        router.push("/");
+        // router.push("/");
+        router.refresh();
       }
     } catch (error) {
       console.log("CreateAccountForm: ", error);
@@ -104,7 +105,7 @@ export function CreateAccountForm() {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="Password" {...field} />
+                  <Input type="password" placeholder="Password" {...field} />
                 </FormControl>
                 <FormDescription>This is your Password</FormDescription>
                 <FormMessage />

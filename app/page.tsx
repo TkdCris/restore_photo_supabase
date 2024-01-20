@@ -1,5 +1,6 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { RedirectType, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
+import { RedirectType } from "next/dist/client/components/redirect";
 import { cookies } from "next/headers";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
